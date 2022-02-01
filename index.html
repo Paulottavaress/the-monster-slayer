@@ -39,11 +39,11 @@
             <button id="give-up" @click="giveUp">GIVE UP</button>
         </div>
     </section>
-    <section class="row log">
+    <section v-if="showLog" class="row log">
         <div class="small-12 columns">
             <ul>
-                <li>
-
+                <li v-for="(item, index) in log" :key="index " :class="[(index % 2 === 0) ? 'player-turn' : 'monster-turn']">
+                    {{ item }}
                 </li>
             </ul>
         </div>
